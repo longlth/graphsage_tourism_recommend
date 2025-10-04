@@ -1,0 +1,28 @@
+# config/default.yaml
+data:
+  batch_size: 1024
+  num_workers: 4
+  val_split: 0.2
+  
+models:
+  graphsage:
+    hidden_channels: 128
+    out_channels: 64
+    num_layers: 2
+    dropout: 0.2
+  
+  gcn:
+    hidden_channels: 64
+    out_channels: 32
+    
+  node2vec:
+    embedding_dim: 64
+    walk_length: 20
+    context_size: 10
+    walks_per_node: 5
+    
+training:
+  epochs: 100
+  learning_rate: 0.01
+  early_stopping_patience: 10
+  grad_clip: 1.0
